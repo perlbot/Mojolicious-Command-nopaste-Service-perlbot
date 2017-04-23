@@ -43,15 +43,30 @@ sub display_channels {
 
   my $response = decode_json $tx->res->body;
 
-  my $output="";
+  my $output="Channels supported by perlbot.pl, all values subject to change.\n-----------------------------------\n";
   for my $channel (@{$response->{channels}}) {
-      $output .= sprintf "%10s %20s\n", $channel->{channel_id}, $channel->{channel_name};
+      $output .= sprintf "%15s  %20s\n", $channel->{name}, $channel->{description};
   }
 
-  return $output;
+  print $output;
 }
 
 sub display_languages {
+  my $self = shift;
+  my $tx = $self->ua->get( 'https://perlbot.pl/api/v1/languages');
+ 
+  unless ($tx->res->is_status_class(200)) {
+    say "Failed to get languages, try again later.";
+  }
+
+  my $response = decode_json $tx->res->body;
+
+  my $output="Languages supported by perlbot.pl\n-----------------------------\n";
+  for my $lang (@{$response->{languages}}) {
+      $output .= sprintf "%15s  %20s\n", $lang->{name}, $lang->{description};
+  }
+
+  print $output;
 }
 
 sub paste {
@@ -75,3 +90,11 @@ sub paste {
 }
  
 1;
+
+__END__
+=head1 NAME
+
+Mojolicious::Command::nopaste::Service::perlbot - A Mojo-nopaste service for https://perlbot.pl/
+
+=head1 AUTHOR
+Ryan Voots L< mailto:SIMCOP@cpan.org >
