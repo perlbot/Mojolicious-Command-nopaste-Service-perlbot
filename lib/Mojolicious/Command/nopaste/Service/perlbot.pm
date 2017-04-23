@@ -6,6 +6,8 @@ use Getopt::Long;
 
 our $VERSION=0.001;
 
+# ABSTRACT: Pastes stuff to https://perlbot.pl/
+
 has name => 'anonymous';
 has 'irc_handled' => 1;
 has desc => 'I broke this';
