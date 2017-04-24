@@ -1,1 +1,0 @@
-lib/Mojolicious/Command/nopaste/Service/perlbot.pm
