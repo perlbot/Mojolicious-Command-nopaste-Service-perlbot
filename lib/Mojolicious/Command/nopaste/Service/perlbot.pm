@@ -4,7 +4,7 @@ use Mojo::JSON qw/decode_json/;
 
 use Getopt::Long;
 
-our $VERSION=0.002;
+our $VERSION=0.003;
 
 # ABSTRACT: Pastes stuff to https://perlbot.pl/
 
