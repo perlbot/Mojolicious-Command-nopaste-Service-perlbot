@@ -80,7 +80,7 @@ sub paste {
     description => $self->desc || '',
   });
  
-  unless ($tx->res->is_success(200)) {
+  unless ($tx->res->is_success) {
     say "Paste failed, try again later.";
     exit 1;
   }
