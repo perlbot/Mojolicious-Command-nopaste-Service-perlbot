@@ -4,7 +4,7 @@ use Mojo::JSON qw/decode_json/;
 
 use Getopt::Long;
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 
 # ABSTRACT: Pastes stuff to https://perl.bot/
 
@@ -98,5 +98,9 @@ Mojolicious::Command::nopaste::Service::perlbot - A Mojo-nopaste service for htt
 
 =head1 AUTHOR
 Ryan Voots L<simcop@cpan.org|mailto:SIMCOP@cpan.org>
+
+=head1 CONTRIBUTORS
+
+Dan Book 
 
 =cut
